@@ -159,10 +159,11 @@ module Daemonize
       $stdout.sync = true
       begin; $stderr.reopen $stdout; rescue ::Exception; end
       $stderr.sync = true
-    else
-      begin; $stdout.reopen '/dev/null'; rescue ::Exception; end
-      begin; $stderr.reopen '/dev/null'; rescue ::Exception; end
     end
+    # else
+    #   begin; $stdout.reopen '/dev/null'; rescue ::Exception; end
+    #   begin; $stderr.reopen '/dev/null'; rescue ::Exception; end
+    # end
   end
   module_function :redirect_io
 end
